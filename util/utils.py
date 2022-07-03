@@ -88,9 +88,8 @@ def progress_bar(current, total, msg=None):
 
 
 # refer to https://github.com/xternalz/WideResNet-pytorch
-def save_checkpoint(state, filename='checkpoint.pth.tar'):
+def save_checkpoint(state, filename='checkpoint.pth.tar', directory="models/"):
     """Saves checkpoint to disk"""
-    directory = "models/"
     if not os.path.exists(directory):
         os.makedirs(directory)
     filename = directory + filename

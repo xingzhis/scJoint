@@ -11,19 +11,19 @@ class Config(object):
             self.device = torch.device('cpu')
         else:
             self.device = torch.device('cuda:0')
-        
+
         if DB == '10x':
             # DB info
             self.number_of_class = 11
             self.input_size = 15463
             self.rna_paths = ['data_10x/exprs_10xPBMC_rna.npz']
-            self.rna_labels = ['data_10x/cellType_10xPBMC_rna.txt']		
+            self.rna_labels = ['data_10x/cellType_10xPBMC_rna.txt']
             self.atac_paths = ['data_10x/exprs_10xPBMC_atac.npz']
             self.atac_labels = [] #Optional. If atac_labels are provided, accuracy after knn would be provided.
             self.rna_protein_paths = []
             self.atac_protein_paths = []
-            
-            # Training config            
+
+            # Training config
             self.batch_size = 256
             self.lr_stage1 = 0.01
             self.lr_stage3 = 0.01
@@ -37,7 +37,7 @@ class Config(object):
             self.with_crossentorpy = True
             self.seed = 1
             self.checkpoint = ''
-        
+
         elif DB == "MOp":
             self.number_of_class = 21
             self.input_size = 18603
@@ -61,8 +61,8 @@ class Config(object):
                                 'data_MOp/YaoEtAl_snmC_cellTypes.txt']
             self.rna_protein_paths = []
             self.atac_protein_paths = []
-            
-            # Training config            
+
+            # Training config
             self.batch_size = 256
             self.lr_stage1 = 0.01
             self.lr_stage3 = 0.001
@@ -75,19 +75,19 @@ class Config(object):
             self.center_weight = 20
             self.with_crossentorpy = True
             self.seed = 1
-            self.checkpoint = '' 
-            
+            self.checkpoint = ''
+
         elif DB == "db4_control":
             self.number_of_class = 7 # Number of cell types in CITE-seq data
             self.input_size = 17668 # Number of common genes and proteins between CITE-seq data and ASAP-seq
             self.rna_paths = ['data/citeseq_control_rna.npz'] # RNA gene expression from CITE-seq data
-            self.rna_labels = ['data/citeseq_control_cellTypes.txt'] # CITE-seq data cell type labels (coverted to numeric) 
+            self.rna_labels = ['data/citeseq_control_cellTypes.txt'] # CITE-seq data cell type labels (coverted to numeric)
             self.atac_paths = ['data/asapseq_control_atac.npz'] # ATAC gene activity matrix from ASAP-seq data
-            self.atac_labels = ['data/asapseq_control_cellTypes.txt'] # ASAP-seq data cell type labels (coverted to numeric) 
+            self.atac_labels = ['data/asapseq_control_cellTypes.txt'] # ASAP-seq data cell type labels (coverted to numeric)
             self.rna_protein_paths = ['data/citeseq_control_adt.npz'] # Protein expression from CITE-seq data
             self.atac_protein_paths = ['data/asapseq_control_adt.npz'] # Protein expression from ASAP-seq data
-            
-            # Training config            
+
+            # Training config
             self.batch_size = 256
             self.lr_stage1 = 0.01
             self.lr_stage3 = 0.01
@@ -100,13 +100,13 @@ class Config(object):
             self.center_weight = 1
             self.with_crossentorpy = True
             self.seed = 1
-            self.checkpoint = '' 
+            self.checkpoint = ''
 
 
 
-            
 
-        
+
+
 
 
 
